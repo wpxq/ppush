@@ -1,5 +1,8 @@
 #!/usr/bin/env python
-import subprocess, os, sys
+__version__ = "1.0"
+import subprocess, os, sys, stat, shutil
+import requests as r
+from pathlib import Path
 from colorama import Fore
 
 w = Fore.WHITE
@@ -11,6 +14,28 @@ reset = Fore.RESET
 
 def run_cmd(cmd):
     return subprocess.run(cmd, shell=True, check=True)
+
+def refresh():
+    url = "https://raw.githubusercontent.com/wpxq/ppush/refs/heads/main/ppush.py"
+    resp = r.get(url)
+    if resp.status_code == 200:
+        with open("ppush.py", "wb") as f:
+            f.write(resp.content)
+        print("Succesfully fetch update")
+    else:
+        print("Failed to fetch update")
+        return
+    ppush_f = "ppush.py"
+    ppush_alias = "ppush"
+    target = Path.home() / ".local" / "bin"
+    target.mkdir(parents=True, exist_ok=True)
+    st = os.stat(ppush_f)
+    os.chmod(ppush_f, st.st_mode | stat.S_IEXEC)
+    shutil.copy(ppush_f, target / ppush_alias)
+    print(f"{ppush_f} refreshed")
+
+def show_ver():
+    print(f"Version: [{__version__}]")
 
 def ppush():
     curr_dir = os.getcwd()
@@ -86,4 +111,21 @@ def ppush():
         print(f"{bl}[{w}Error{bl}] {rd}Git Error: {e}{reset}")
 
 if __name__ == "__main__":
-    ppush()
+    if len(sys.argv) == 1:
+        ppush()
+    else:
+        arg = sys.argv[1]
+        
+        if arg == "refresh":
+            refresh()
+        elif arg == "help":
+            commands = f"""
+    [ppush] Standard push with interactive commit msg
+    ppush [refresh] Fetch new version from GitHub
+    ppush [version] Shows current version
+            """
+            print(commands)
+        elif arg == "version":
+            show_ver()
+        else:
+            ppush()
