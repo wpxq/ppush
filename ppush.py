@@ -120,9 +120,10 @@ if __name__ == "__main__":
             refresh()
         elif arg == "--help":
             commands = f"""
-    [ppush] Standard push with interactive commit msg
-    ppush [refresh] Fetch new version from GitHub
-    ppush [version] Shows current version
+[ppush] Standard push with interactive commit msg
+ppush [--help] Show this help message
+ppush [refresh] Fetch new version from GitHub
+ppush [--version] Shows current version
             """
             print(commands)
         elif arg == "--version":
