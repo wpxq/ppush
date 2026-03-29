@@ -116,16 +116,16 @@ if __name__ == "__main__":
     else:
         arg = sys.argv[1]
         
-        if arg == "refresh":
+        if arg == "--refresh":
             refresh()
-        elif arg == "help":
+        elif arg == "--help":
             commands = f"""
     [ppush] Standard push with interactive commit msg
     ppush [refresh] Fetch new version from GitHub
     ppush [version] Shows current version
             """
             print(commands)
-        elif arg == "version":
+        elif arg == "--version":
             show_ver()
         else:
             ppush()
