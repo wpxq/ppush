@@ -27,8 +27,8 @@
 
 ## Usage
 
-### Interactive
-* ppush
+### `ppush`
+Standard push with interactive commit message.
 
 ### `--help`
 Shows a list of commands
