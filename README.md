@@ -26,10 +26,20 @@
    ```
 
 ## Usage
-### Fast Push:
-* ppush "Fixed server.py"
-### Interactive:
+
+### Interactive
 * ppush
+
+### `--help`
+Shows a list of commands
+
+### `--refresh`
+Fetch new version from this github repo.
+if there are any problems with the path:
+##### type in .bashrc => export PATH="$HOME/.local/bin:$PATH" => save & type => source .bashrc
+
+### `--version`
+Shows current version of ppush.
 
 ## Requirements
 * Python 3.11 or higher
