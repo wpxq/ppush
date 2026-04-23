@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-__version__ = "1.0"
+__version__ = "1.1.0"
 import subprocess, os, sys, stat, shutil
 import requests as r
 from pathlib import Path
@@ -122,7 +122,7 @@ if __name__ == "__main__":
             commands = f"""
 [ppush] Standard push with interactive commit message
 ppush [--help] Show this help message
-ppush [refresh] Fetch new version from GitHub
+ppush [--refresh] Fetch new version from GitHub
 ppush [--version] Shows current version
             """
             print(commands)
