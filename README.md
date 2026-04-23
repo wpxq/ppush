@@ -35,11 +35,33 @@ Shows a list of commands
 
 ### `--refresh`
 Fetch new version from this github repo.
-if there are any problems with the path:
-##### type in .bashrc => export PATH="$HOME/.local/bin:$PATH" => save & type => source .bashrc
 
 ### `--version`
 Shows current version of ppush.
+
+### Issues after update?
+if `ppush --version` still shows the old version after a refresh, it's likely a **PATH priority**
+or **caching** issue.
+1. **Clear the shell cache**:
+Your terminal might stsill remember the old location of the script. Run this to reset it:
+```bash
+hash -r
+```
+2. **Check your PATH**:
+Ensure your local bin directory is at the beginning of your `$PATH`. Add this to your ``.bashrc``:
+```bash
+export PATH="$HOME/.local/bin:$PATH"
+```
+Then apply the changes:
+```bash
+source .bashrc
+```
+3. **Remove old global versions**:
+if you previously installed ``ppush`` using ``sudo``, the old version in ``/usr/local/bin`` might be
+overriding your local one. Remove it:
+```bash
+sudo rm /usr/local/bin/ppush
+```
 
 ## Requirements
 * Python 3.11 or higher
