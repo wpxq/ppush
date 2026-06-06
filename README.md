@@ -17,15 +17,7 @@
   - If it is missing, it will prompt you to enter it.
   - It will automatically set the branch to `main` and link it to GitHub.
 
-## Setup
-1. Clone this repo
-2. Run the provided installation bash script:
-   ```bash
-   chmod +x ppush_setup.sh
-   ./ppush_setup.sh
-   ```
-
-## Usage
+## Functions
 
 ### `ppush`
 Standard push with interactive commit message.
@@ -38,6 +30,14 @@ Fetch new version from this github repo.
 
 ### `--version`
 Shows current version of ppush.
+
+## Setup
+1. Clone this repo
+2. Run the provided installation bash script:
+   ```bash
+   chmod +x ppush_setup.sh
+   ./ppush_setup.sh
+   ```
 
 ### Issues after update?
 if `ppush --version` still shows the old version after a refresh, it's likely a **PATH priority**
