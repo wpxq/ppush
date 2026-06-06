@@ -17,8 +17,7 @@
   - If it is missing, it will prompt you to enter it.
   - It will automatically set the branch to `main` and link it to GitHub.
 
-## Functions
-
+## Usage
 ### `ppush`
 Standard push with interactive commit message.
 
