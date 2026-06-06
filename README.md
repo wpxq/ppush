@@ -67,3 +67,6 @@ sudo rm /usr/local/bin/ppush
 * Python 3.11 or higher
 * `colorama` library
 * Have installed `git` on your system
+
+## Contributing
+Contributions are welcome! If you'd like to help improve **ppush**, please read the [CONTRIBUTING.md](CONTRIBUTING.md) file to understand how to get started, report bugs, or submit your own pull requests.
