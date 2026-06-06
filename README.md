@@ -42,7 +42,7 @@ Shows current version of ppush.
 if `ppush --version` still shows the old version after a refresh, it's likely a **PATH priority**
 or **caching** issue.
 1. **Clear the shell cache**:
-Your terminal might stsill remember the old location of the script. Run this to reset it:
+Your terminal might still remember the old location of the script. Run this to reset it:
 ```bash
 hash -r
 ```
