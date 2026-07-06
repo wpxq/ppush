@@ -16,7 +16,7 @@ def run_cmd(cmd):
     return subprocess.run(cmd, shell=True, check=True)
 
 def refresh():
-    url = "https://raw.githubusercontent.com/wpxq/ppush/refs/heads/main/ppush.py"
+    url = "https://raw.githubusercontent.com/wreakdev/ppush/refs/heads/main/ppush.py"
     resp = r.get(url)
     if resp.status_code == 200:
         with open("ppush.py", "wb") as f:
@@ -45,7 +45,7 @@ def ppush():
         wantgit = input("Do you want to initialize git here? (y/n): ").lower()
         
         if wantgit == 'y':
-            repo_url = input("Repo URL (ex. https://github.com/wpxq/myrepo.git): ")
+            repo_url = input("Repo URL (ex. https://github.com/wreakdev/myrepo.git): ")
             run_cmd("git init")
             if repo_url:
                 run_cmd(f"git remote add origin {repo_url}")
@@ -62,7 +62,7 @@ def ppush():
             remotes = subprocess.check_output(["git", "remote"]).decode().strip()    
             if "origin" not in remotes:
                 print(f"{bl}[{w}Warning{bl}] {ylw}Git folder exists, but no remote 'origin' found.{reset}")
-                repo_url = input("Please enter Repo URL (ex. https://github.com/wpxq/myrepo.git): ")
+                repo_url = input("Please enter Repo URL (ex. https://github.com/wreakdev/myrepo.git): ")
                 if repo_url:
                     run_cmd(f"git remote add origin {repo_url}")
                     run_cmd("git branch -M main")
