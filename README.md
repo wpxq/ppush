@@ -1,6 +1,6 @@
 # ppush
 
-![ppush](https://github.com/wpxq/ppush/blob/main/ppush.png)
+![ppush](https://github.com/wreakdev/ppush/blob/main/ppush.png)
 
 ---
 
